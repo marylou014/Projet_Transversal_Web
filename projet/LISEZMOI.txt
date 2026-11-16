@@ -1,0 +1,17 @@
+Projet projet-transversal-web — php
+===========================================================================
+Tout le projet est dans /opt/projet :
+
+front/ : les pages du site (index.php en entrée), servies sur http://<IP>/
+back/  : le backend PHP, servi sur http://<IP>/api/
+   back/routes/<nom>.php   = la route /api/<nom>  (exemple : routes/sante.php → /api/sante)
+                             variables disponibles : $methode (GET, POST...), $params (/api/nom/12 → ['12'])
+   back/bootstrap.php      = db() (connexion PDO à la BDD), json($donnees, $code), corps() (JSON reçu)
+   Depuis une page du front : require __DIR__ . '/../back/bootstrap.php';   puis   db()->query(...)
+   Depuis le JavaScript du front : fetch('/api/<nom>')
+Rien à relancer : déposez les fichiers, c'est en ligne.
+Erreurs PHP : sudo tail -f /var/log/php-fpm/www-error.log
+
+Identifiants de la BDD : /opt/projet/.env (jamais servi par nginx ; variables d'environnement du backend).
+Tout le monde dans le groupe « projet » peut écrire dans /opt/projet.
+nginx : /etc/nginx/conf.d/site.conf (sudo nginx -t && sudo systemctl reload nginx)

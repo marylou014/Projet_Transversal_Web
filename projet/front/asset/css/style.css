@@ -1,0 +1,20 @@
+:root {
+    --fond: #F7F5F0;
+    --primaire: #E11D48;
+    --secondaire: #f0b622;
+    --tertiaire: #1E3A8A;
+    --texte: #01021f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--fond);
+    color: var(--texte);
+}
+

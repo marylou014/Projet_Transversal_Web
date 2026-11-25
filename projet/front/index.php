@@ -1,25 +1,24 @@
 <?php
-// Page d'arrivée : présentation + formulaires d'inscription et de connexion.
+// Page d'arrivée
 
 require __DIR__ . '/../back/bootstrap.php';
 
-// Déjà connecté ? Pas besoin de revoir le formulaire : direction l'accueil membre.
+// Déjà connecté
 if (utilisateur() !== null) {
     header('Location: /membre/homeMem.php');
     exit;
 }
 
-include __DIR__ . '/includes/header.php';
 ?>
 
-<!-- Styles et script propres à cette page. Ils sont chargés APRÈS style.css (dans le header),
-     donc ils peuvent compléter ou corriger les styles communs.
-     Une balise <link rel="stylesheet"> est autorisée dans le <body> en HTML5. -->
+
 <link rel="stylesheet" href="/asset/css/accueil.css">
-<!-- defer : le script s'exécute une fois la page entièrement lue, il ne bloque pas l'affichage -->
+<link rel="stylesheet" href="/asset/css/style.css">
+
+
 <script src="/asset/js/accueil.js" defer></script>
 
-<!-- Rideau de cinéma qui s'ouvre au chargement (purement décoratif : aria-hidden) -->
+<!-- Rideau  -->
 <div class="rideau" aria-hidden="true">
     <div class="rideau-gauche"></div>
     <div class="rideau-droite"></div>
@@ -27,7 +26,6 @@ include __DIR__ . '/includes/header.php';
 
 <main class="scene">
 
-    <!-- ===================== PRÉSENTATION (gauche) ===================== -->
     <section class="presentation" aria-labelledby="titre-principal">
 
         <div class="bloc-logo">
@@ -43,7 +41,7 @@ include __DIR__ . '/includes/header.php';
             ce que tu veux voir, tes notes et tes avis, au même endroit.
         </p>
 
-        <!-- Les 4 objectifs du projet (page Notion). Elles apparaissent toutes en même temps. -->
+        <!-- Les objectifs  -->
         <ul class="atouts">
             <li class="atout">
                 <span aria-hidden="true">🎬</span>
@@ -68,10 +66,10 @@ include __DIR__ . '/includes/header.php';
         </ul>
     </section>
 
-    <!-- ===================== FORMULAIRES (droite) ===================== -->
+    <!-- FORMULAIRES -->
     <section class="carte" aria-label="Connexion et inscription">
 
-        <!-- Les onglets : role="tablist" aide les lecteurs d'écran à comprendre -->
+        <!-- Les onglets -->
         <div class="onglets" role="tablist">
             <button class="onglet" role="tab" id="onglet-inscription"
                     aria-controls="form-inscription" aria-selected="true">Créer un compte</button>
@@ -79,8 +77,8 @@ include __DIR__ . '/includes/header.php';
                     aria-controls="form-connexion" aria-selected="false">Se connecter</button>
         </div>
 
-        <!-- ---------- Inscription ---------- -->
-        <!-- novalidate : on fait la vérification nous-mêmes en JS pour afficher nos propres messages -->
+        <!-- Inscription -->
+        <!-- vérification -->
         <form class="formulaire" id="form-inscription" role="tabpanel"
               aria-labelledby="onglet-inscription" novalidate>
             <h2>Rejoins le club 🍿</h2>
@@ -98,12 +96,11 @@ include __DIR__ . '/includes/header.php';
             <input id="ins-mdp2" name="mdp2" type="password" autocomplete="new-password" required>
 
             <button type="submit" class="bouton">Créer mon compte</button>
-            <!-- Zone où le JS écrit les messages. aria-live : lue automatiquement par les lecteurs d'écran -->
+            <!-- tpm pour js askip -->
             <p class="message" aria-live="polite"></p>
         </form>
 
-        <!-- ---------- Connexion ---------- -->
-        <!-- hidden : caché au départ, le JS l'affiche quand on clique sur l'onglet -->
+        <!-- Connexion -->
         <form class="formulaire" id="form-connexion" role="tabpanel"
               aria-labelledby="onglet-connexion" novalidate hidden>
             <h2>Bon retour parmi nous 🎞️</h2>
@@ -122,6 +119,5 @@ include __DIR__ . '/includes/header.php';
 </main>
 
 <?php
-// Pied de page commun (Marylou) : c'est lui qui ferme </body></html>
 include __DIR__ . '/includes/footer.php';
 ?>

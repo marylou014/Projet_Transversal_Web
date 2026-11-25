@@ -1,0 +1,10 @@
+.footer {
+    border-top: 1px solid #d9d4c7; /* Trait de séparation en haut */
+    padding: 16px 48px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 0; /* Enlève les marges par défaut du texte */
+}

@@ -1,0 +1,240 @@
+
+/* 2 colonnes */
+
+.scene {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+
+/* gauche */
+
+.bloc-logo img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.presentation h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.presentation p {
+    font-size: 18px;
+    color: #555555;
+    margin-bottom: 30px;
+}
+
+/* cartes */
+.atouts {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.atout {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+/* JS cartes */
+.atout.visible {
+    opacity: 1;
+}
+
+.atout strong {
+    display: block;
+}
+
+
+/* droite */
+
+.carte {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+/* boutons */
+.onglets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.onglet {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    background-color: var(--fond);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* onglet choisi */
+.onglet[aria-selected="true"] {
+    background-color: var(--primaire);
+    border-color: var(--primaire);
+    color: white;
+}
+
+.formulaire h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.formulaire label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+.formulaire small {
+    font-weight: normal;
+    color: #555555;
+}
+
+.formulaire input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* le truc du formulaire selectionner */
+.formulaire input:focus {
+    border-color: var(--tertiaire);
+}
+
+/* le sa marche pas du formulaire */
+.formulaire input[aria-invalid="true"] {
+    border-color: var(--primaire);
+}
+
+.bouton {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primaire);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bouton:hover {
+    background-color: #B4173A;
+}
+
+/* Bouton bloqué  */
+.bouton:disabled {
+    opacity: 0.6;
+}
+
+.message {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.message.erreur {
+    color: var(--primaire);
+}
+
+.message.succes {
+    color: green;
+}
+
+/* rideau  */
+.rideau {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    pointer-events: none;
+}
+
+.rideau-gauche,
+.rideau-droite {
+    width: 50%;
+    /* plis rideau */
+    background: repeating-linear-gradient(90deg, #B3123A 0 18px, var(--primaire) 18px 40px, #C2163F 40px 52px);
+}
+
+.rideau-gauche {
+    animation: ouvrir-gauche 1.1s 0.25s cubic-bezier(.7, 0, .3, 1) forwards;
+}
+
+.rideau-droite {
+    animation: ouvrir-droite 1.1s 0.25s cubic-bezier(.7, 0, .3, 1) forwards;
+}
+
+@keyframes ouvrir-gauche {
+    to { transform: translateX(-100%); }
+}
+
+@keyframes ouvrir-droite {
+    to { transform: translateX(100%); }
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    .scene {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .presentation {
+        text-align: center;
+    }
+
+    .bloc-logo img {
+        width: 220px;
+    }
+
+    .presentation h1 {
+        font-size: 30px;
+    }
+
+    .atouts {
+        grid-template-columns: 1fr;   /* les cartes l'une sous l'autre */
+    }
+}
+
+
+/* si la personne marche sur un micro onde */
+
+@media (prefers-reduced-motion: reduce) {
+    .rideau {
+        display: none;
+    }
+
+    .atout {
+        opacity: 1;
+        transition: none;
+    }
+}

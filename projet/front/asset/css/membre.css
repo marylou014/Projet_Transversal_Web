@@ -1,0 +1,104 @@
+/* ==========================================================
+   membre.css : le style des pages de l'espace membre
+   ----------------------------------------------------------
+   Les couleurs (--fond, --primaire, --secondaire, --tertiaire,
+   --texte) sont dans style.css. On les utilise avec var(--nom).
+   ========================================================== */
+
+
+/* ---------- La zone de contenu ---------- */
+
+.page-membre {
+    max-width: 900px;
+    margin: 0 auto;              /* centre la page */
+    padding: 30px;
+}
+
+.page-membre h1 {
+    font-size: 34px;
+    margin-bottom: 5px;
+}
+
+.page-membre h2 {
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.sous-titre {
+    color: #555555;
+    font-size: 18px;
+}
+
+
+/* ---------- Les 3 chiffres ---------- */
+
+.chiffres {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;   /* 3 colonnes */
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.chiffre {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: #555555;
+}
+
+/* Le gros nombre au-dessus du texte */
+.nombre {
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--primaire);
+}
+
+
+/* ---------- Les raccourcis ---------- */
+
+.raccourcis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;      /* 2 par ligne */
+    gap: 15px;
+}
+
+.raccourcis a {
+    display: block;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 17px;
+    color: var(--texte);
+    text-decoration: none;               /* pas souligné */
+}
+
+.raccourcis a:hover {
+    border-color: var(--primaire);
+    color: var(--primaire);
+}
+
+
+/* ---------- Déconnexion ---------- */
+
+.deconnexion {
+    margin-top: 40px;
+}
+
+.deconnexion a {
+    color: var(--primaire);
+}
+
+
+/* ---------- Petits écrans ---------- */
+
+@media (max-width: 600px) {
+    .chiffres,
+    .raccourcis {
+        grid-template-columns: 1fr;      /* tout sur une seule colonne */
+    }
+}

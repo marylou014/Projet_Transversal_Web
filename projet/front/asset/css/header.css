@@ -1,0 +1,90 @@
+/* HEADER */
+header {
+    background-color: color-mix(in srgb, var(--secondaire) 60%, white);
+    padding: 15px 30px;
+}
+
+/* Conteneur interne : aligne logo, nav et boutons */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--texte);
+}
+
+/* LOGO */
+.zone-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-header {
+    width: auto;
+    height: 70px;
+}
+
+.logo-header img {
+    width: 100%;
+    height: 100%;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 20px;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+nav a:hover {
+    color: var(--primaire);
+    text-shadow: 0 0 1px var(--primaire), 0 0 1px var(--primaire);
+}
+
+/* BOUTON AJOUTER + PROFIL */
+.action {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ajout a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--primaire);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.ajout a:hover {
+    background-color: color-mix(in srgb, var(--primaire) 80%, black);
+}
+
+.ajout svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ICÔNE PROFIL */
+#icone-profil {
+    width: 38px;
+    height: 38px;
+    background-color: var(--secondaire);
+    border-radius: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid var(--secondaire);
+}

@@ -1,27 +1,21 @@
 <?php
-// ===========================================================================
-// Mes films à voir (Marylou)
-// ---------------------------------------------------------------------------
-// Page réservée aux membres connectés.
-// ===========================================================================
-
-// On charge les fonctions communes (base de données, session...)
-require __DIR__ . '/../../back/bootstrap.php';
-
-// Pas connecté → retour à la page d'arrivée. Connecté → $moi contient
-// l'utilisateur : $moi['id'], $moi['nom'], $moi['admin'].
-// Ça doit être fait AVANT d'afficher quoi que ce soit (sinon la redirection ne marche pas).
-$moi = page_connexion_requise();
-
-// En-tête commun (Marylou)
-include __DIR__ . '/../includes/header.php';
+include '../includes/header.php';
 ?>
 
-<main>
-    <h1>Mes films à voir</h1>
-    <!-- Contenu de la page à faire -->
-</main>
+<link rel="stylesheet" href="../asset/css/style.css">
+<link rel="stylesheet" href="../asset/css/header.css">
+<link rel="stylesheet" href="../asset/css/footer.css">
 
-<?php
-// Pied de page commun (Marylou)
-include __DIR__ . '/../includes/footer.php';
+<body>
+<main>
+    <h1>Mes Films à voir</h1>
+
+
+</main>
+<footer>
+    <?php
+    include '../includes/footer.php';
+    ?>
+</footer>
+</body>
+

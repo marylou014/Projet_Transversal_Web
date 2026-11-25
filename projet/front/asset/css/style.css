@@ -16,5 +16,12 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--fond);
     color: var(--texte);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+main {
+    flex: 1;
+    width: 100%;
+}

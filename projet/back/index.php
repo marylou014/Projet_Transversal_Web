@@ -1,7 +1,5 @@
 <?php
-// Routeur de l'API : /api/<nom> exécute back/routes/<nom>.php
-// /api/utilisateurs/12  →  routes/utilisateurs.php avec $params = ['12'] et $methode = 'GET', 'POST'...
-// Ne pas modifier : ajoutez simplement des fichiers dans back/routes/.
+
 declare(strict_types=1);
 require __DIR__ . '/bootstrap.php';
 

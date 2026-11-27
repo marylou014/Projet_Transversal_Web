@@ -81,7 +81,11 @@ include __DIR__ . '/../includes/header.php';
         <a href="/membre/recherche.php">🔍 Ajouter un film</a>
         <a href="/membre/bibliotheque.php">📚 Ma bibliothèque</a>
         <a href="/membre/aVoir.php">🎬 Mes films à voir</a>
-        <a href="/membre/statistique.php">📊 Mes statistiques</a>
+        <a href="/membre/statistiques.php">📊 Mes statistiques</a>
+        <?php if ($moi['admin']): ?>
+            <!-- Seulement pour les administrateurs -->
+            <a href="/admin/homeAdmin.php">🛠️ Espace administrateur</a>
+        <?php endif; ?>
     </div>
 
     <p class="deconnexion">

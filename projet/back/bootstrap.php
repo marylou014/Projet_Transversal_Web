@@ -88,3 +88,23 @@ function api_connexion_requise(): array {
 function e(?string $texte): string {
     return htmlspecialchars($texte ?? '', ENT_QUOTES, 'UTF-8');
 }
+
+// À mettre TOUT EN HAUT d'une page réservée aux ADMINISTRATEURS.
+// Pas connecté → page d'arrivée. Connecté mais simple membre → accueil membre.
+function page_admin_requise(): array {
+    $moi = page_connexion_requise();
+    if (!$moi['admin']) {
+        header('Location: /membre/homeMem.php');
+        exit;
+    }
+    return $moi;
+}
+
+// Même chose pour une route de l'API réservée aux administrateurs
+function api_admin_requise(): array {
+    $moi = api_connexion_requise();
+    if (!$moi['admin']) {
+        json(['erreur' => 'réservé aux administrateurs'], 403);   // 403 = connecté mais pas le droit
+    }
+    return $moi;
+}

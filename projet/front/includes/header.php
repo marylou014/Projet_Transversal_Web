@@ -28,7 +28,7 @@
                 <a href="/membre/homeMem.php">Accueil</a>
                 <a href="/membre/bibliotheque.php">Bibliothèque</a>
                 <a href="/membre/aVoir.php">À voir </a>
-                <a href="/membre/statistique.php">Statistiques</a>
+                <a href="/membre/statistiques.php">Statistiques</a>
             </nav>
 
             <!--BOUTON AJOUTER + profil -->

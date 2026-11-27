@@ -1,0 +1,115 @@
+/* ==========================================================
+   admin.css : le tableau des membres et le formulaire de compte
+   (en plus de membre.css, qui donne la mise en page)
+   ========================================================== */
+
+
+/* ---------- Le tableau ---------- */
+
+.tableau {
+    width: 100%;
+    border-collapse: collapse;   /* une seule bordure entre deux cases */
+    background-color: white;
+    margin-top: 15px;
+}
+
+.tableau th,
+.tableau td {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.tableau th {
+    background-color: var(--fond);
+}
+
+
+/* ---------- Les boutons ---------- */
+
+/* Bouton rouge principal (lien ou bouton) */
+.bouton-lien {
+    display: inline-block;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primaire);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bouton-lien:hover {
+    background-color: #B4173A;
+}
+
+/* Petits boutons dans le tableau */
+.petit-bouton {
+    margin-left: 8px;
+    padding: 4px 8px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.petit-bouton.danger {
+    border-color: var(--primaire);
+    color: var(--primaire);
+}
+
+
+/* ---------- Le formulaire ---------- */
+
+.formulaire-admin {
+    max-width: 450px;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.formulaire-admin label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+.formulaire-admin small {
+    font-weight: normal;
+    color: #555555;
+}
+
+.formulaire-admin input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+}
+
+/* Les cases à cocher : la case et le texte sur la même ligne */
+.formulaire-admin .case {
+    font-weight: normal;
+}
+
+.formulaire-admin .case input {
+    width: auto;
+    margin-right: 6px;
+}
+
+.formulaire-admin .bouton-lien {
+    margin-top: 20px;
+}
+
+
+/* ---------- Petits écrans : le tableau défile sur le côté ---------- */
+
+@media (max-width: 600px) {
+    .tableau {
+        display: block;
+        overflow-x: auto;
+    }
+}

@@ -94,6 +94,32 @@
 }
 
 
+/* ---------- Statistiques : les barres des genres ---------- */
+
+.genre {
+    margin-bottom: 12px;
+}
+
+.barre {
+    height: 14px;
+    margin-top: 4px;
+    border-radius: 4px;
+    background-color: var(--secondaire);
+    /* la largeur est donnée par statistique.js (ex : width: 50%) */
+}
+
+
+/* ---------- Messages d'erreur / de réussite ---------- */
+
+.message.erreur {
+    color: var(--primaire);
+}
+
+.message.succes {
+    color: green;
+}
+
+
 /* ---------- Petits écrans ---------- */
 
 @media (max-width: 600px) {

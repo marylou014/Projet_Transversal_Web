@@ -35,6 +35,7 @@ CREATE TABLE Utilisateur (
     emailUser VARCHAR(255) NOT NULL,
     mdpUser   VARCHAR(255) NOT NULL,                 -- HASH du mot de passe (password_hash), jamais en clair
     Admin     TINYINT(1)   NOT NULL DEFAULT 0,       -- 1 = administrateur, 0 = membre (RÈGLE 1 : un seul rôle)
+    actif     TINYINT(1)   NOT NULL DEFAULT 1,       -- 0 = compte désactivé par un admin (ne peut plus se connecter)
     PRIMARY KEY (idUser),
     UNIQUE KEY uq_nomUser   (nomUser),               -- on se connecte avec le nom ou l'email :
     UNIQUE KEY uq_emailUser (emailUser)              -- ils doivent donc être uniques
